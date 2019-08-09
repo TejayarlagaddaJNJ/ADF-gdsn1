@@ -1,6 +1,505 @@
 {
 	"name": "EDL_gdsn_q",
 	"properties": {
+		"activities": [
+			{
+				"name": "Copy_Edl_Query",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSetting",
+							"recursive": true
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSetting"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "truncate table tjy_gdsn.dbo.gdsn_poc"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "pskucd",
+									"type": "String"
+								},
+								"sink": {
+									"name": "pskucd",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "prodstatcd",
+									"type": "String"
+								},
+								"sink": {
+									"name": "prodstatcd",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "proddescntxt",
+									"type": "String"
+								},
+								"sink": {
+									"name": "proddescntxt",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "latxcd",
+									"type": "String"
+								},
+								"sink": {
+									"name": "latxcd",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "prntprodcd",
+									"type": "String"
+								},
+								"sink": {
+									"name": "prntprodcd",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "gprdaltntprodcd",
+									"type": "String"
+								},
+								"sink": {
+									"name": "gprdaltntprodcd",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "legacyprodcd",
+									"type": "String"
+								},
+								"sink": {
+									"name": "legacyprodcd",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "majorgpcode_profile",
+									"type": "String"
+								},
+								"sink": {
+									"name": "majorgpcode_profile",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "createdt_profile",
+									"type": "String"
+								},
+								"sink": {
+									"name": "createdt_profile",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "prodmodcd",
+									"type": "String"
+								},
+								"sink": {
+									"name": "prodmodcd",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "hazmatcd",
+									"type": "String"
+								},
+								"sink": {
+									"name": "hazmatcd",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "spclstorgereqmcd",
+									"type": "String"
+								},
+								"sink": {
+									"name": "spclstorgereqmcd",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "prodownrcd",
+									"type": "String"
+								},
+								"sink": {
+									"name": "prodownrcd",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "gtintypcd",
+									"type": "String"
+								},
+								"sink": {
+									"name": "gtintypcd",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "gtincd",
+									"type": "String"
+								},
+								"sink": {
+									"name": "gtincd",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "pkgeglvlcd",
+									"type": "String"
+								},
+								"sink": {
+									"name": "pkgeglvlcd",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "pkgeglvllbluomcd",
+									"type": "String"
+								},
+								"sink": {
+									"name": "pkgeglvllbluomcd",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "sellguomind",
+									"type": "String"
+								},
+								"sink": {
+									"name": "sellguomind",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "shpguomind",
+									"type": "String"
+								},
+								"sink": {
+									"name": "shpguomind",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "rcvguomind",
+									"type": "String"
+								},
+								"sink": {
+									"name": "rcvguomind",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "efftvdt_uom",
+									"type": "String"
+								},
+								"sink": {
+									"name": "efftvdt_uom",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "enddt_uom",
+									"type": "String"
+								},
+								"sink": {
+									"name": "enddt_uom",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "pkgeglvlqty",
+									"type": "String"
+								},
+								"sink": {
+									"name": "pkgeglvlqty",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "contains",
+									"type": "String"
+								},
+								"sink": {
+									"name": "contains",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "contains_lbl",
+									"type": "String"
+								},
+								"sink": {
+									"name": "contains_lbl",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "gwtqty",
+									"type": "String"
+								},
+								"sink": {
+									"name": "gwtqty",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "wgtuomcd",
+									"type": "String"
+								},
+								"sink": {
+									"name": "wgtuomcd",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "htqty",
+									"type": "String"
+								},
+								"sink": {
+									"name": "htqty",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "voluomcd",
+									"type": "String"
+								},
+								"sink": {
+									"name": "voluomcd",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "wdtqty",
+									"type": "String"
+								},
+								"sink": {
+									"name": "wdtqty",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "dpthqty",
+									"type": "String"
+								},
+								"sink": {
+									"name": "dpthqty",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "createdt_uom",
+									"type": "String"
+								},
+								"sink": {
+									"name": "createdt_uom",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "volume_uom_cd1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "volume_uom_cd1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "volume_uom_cd2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "volume_uom_cd2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "regcd",
+									"type": "String"
+								},
+								"sink": {
+									"name": "regcd",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "statcd",
+									"type": "String"
+								},
+								"sink": {
+									"name": "statcd",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "slsorgcocd",
+									"type": "String"
+								},
+								"sink": {
+									"name": "slsorgcocd",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "slsorgdivcd",
+									"type": "String"
+								},
+								"sink": {
+									"name": "slsorgdivcd",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "majorgpcode_regional",
+									"type": "String"
+								},
+								"sink": {
+									"name": "majorgpcode_regional",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "slifamt",
+									"type": "String"
+								},
+								"sink": {
+									"name": "slifamt",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "slifmeacd",
+									"type": "String"
+								},
+								"sink": {
+									"name": "slifmeacd",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "minmslifamt",
+									"type": "String"
+								},
+								"sink": {
+									"name": "minmslifamt",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "dchainspclstatcd",
+									"type": "String"
+								},
+								"sink": {
+									"name": "dchainspclstatcd",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ecatlgdescntxt",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ecatlgdescntxt",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "usereusecd",
+									"type": "String"
+								},
+								"sink": {
+									"name": "usereusecd",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "gdsnedlquery",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "gdsn_poc_table",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
 		"annotations": []
 	}
 }

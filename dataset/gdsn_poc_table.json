@@ -1,0 +1,15 @@
+{
+	"name": "gdsn_poc_table",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"tableName": "[dbo].[gdsn_poc]"
+		}
+	}
+}
