@@ -1246,6 +1246,141 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "sproc_prod_catgzn",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "C_LKUP_PROD_CATGZN_MV",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[sproc_c_lkup_prod_catgzn_mv]"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "sproc_PROD_OWNR_MV",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "C_LKUP_PROD_OWNR_MV",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[sproc_C_LKUP_PROD_OWNR_MV]"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "sproc_SLS_ORG_CO_MV",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "C_LKUP_SLS_ORG_CO_MV",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[sproc_C_LKUP_SLS_ORG_CO_MV]"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "sproc_dchain",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "C_LKUP_DCHAIN_SPL_STAT_MV",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[sproc_Dchain_Spl_Stat_mv]"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "Sproc_SLS_ORG_DIV_MV",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "C_LKUP_SLS_ORG_DIV_MV",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[sproc_C_LKUP_SLS_ORG_DIV_MV]"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
 		"annotations": []
