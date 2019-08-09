@@ -1,0 +1,106 @@
+{
+	"name": "C_LKUP_SLS_ORG_DIV_MV_table",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ROWID_OBJECT",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CREATOR",
+				"type": "nvarchar"
+			},
+			{
+				"name": "CREATE_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "UPDATED_BY",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "CONSOLIDATION_IND",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DELETED_IND",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DELETED_BY",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DELETED_DATE",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "LAST_ROWID_SYSTEM",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DIRTY_IND",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SLS_ORG_DIV_CD",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SLS_ORG_DIV_NM",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SLS_ORG_DIV_SHRT_NM",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SLS_ORG_CO_CD",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DESCN",
+				"type": "nvarchar"
+			},
+			{
+				"name": "STAT_CD",
+				"type": "nvarchar"
+			},
+			{
+				"name": "EFFTV_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "END_DT",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "SLS_ALGN_MDL_CD",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"tableName": "[dbo].[C_LKUP_SLS_ORG_DIV_MV]"
+		}
+	}
+}

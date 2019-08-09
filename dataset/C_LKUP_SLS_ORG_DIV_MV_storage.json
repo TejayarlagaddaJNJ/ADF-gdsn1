@@ -1,0 +1,104 @@
+{
+	"name": "C_LKUP_SLS_ORG_DIV_MV_storage",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "tjystorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "C_LKUP_SLS_ORG_DIV_MV.csv",
+				"container": "gdsnfile"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "ROWID_OBJECT",
+				"type": "String"
+			},
+			{
+				"name": "CREATOR",
+				"type": "String"
+			},
+			{
+				"name": "CREATE_DATE",
+				"type": "String"
+			},
+			{
+				"name": "UPDATED_BY",
+				"type": "String"
+			},
+			{
+				"name": "LAST_UPDATE_DATE",
+				"type": "String"
+			},
+			{
+				"name": "CONSOLIDATION_IND",
+				"type": "String"
+			},
+			{
+				"name": "DELETED_IND",
+				"type": "String"
+			},
+			{
+				"name": "DELETED_BY",
+				"type": "String"
+			},
+			{
+				"name": "DELETED_DATE",
+				"type": "String"
+			},
+			{
+				"name": "LAST_ROWID_SYSTEM",
+				"type": "String"
+			},
+			{
+				"name": "DIRTY_IND",
+				"type": "String"
+			},
+			{
+				"name": "SLS_ORG_DIV_CD",
+				"type": "String"
+			},
+			{
+				"name": "SLS_ORG_DIV_NM",
+				"type": "String"
+			},
+			{
+				"name": "SLS_ORG_DIV_SHRT_NM",
+				"type": "String"
+			},
+			{
+				"name": "SLS_ORG_CO_CD",
+				"type": "String"
+			},
+			{
+				"name": "DESCN",
+				"type": "String"
+			},
+			{
+				"name": "STAT_CD",
+				"type": "String"
+			},
+			{
+				"name": "EFFTV_DT",
+				"type": "String"
+			},
+			{
+				"name": "END_DT",
+				"type": "String"
+			},
+			{
+				"name": "SLS_ALGN_MDL_CD",
+				"type": "String"
+			}
+		]
+	}
+}

@@ -999,6 +999,253 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "C_LKUP_SLS_ORG_DIV_MV",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSetting",
+							"recursive": true
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSetting"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "truncate table C_LKUP_SLS_ORG_DIV_MV"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "ROWID_OBJECT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ROWID_OBJECT",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CREATOR",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CREATOR",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CREATE_DATE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CREATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "UPDATED_BY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "UPDATED_BY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LAST_UPDATE_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "CONSOLIDATION_IND",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CONSOLIDATION_IND",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DELETED_IND",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DELETED_IND",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DELETED_BY",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DELETED_BY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DELETED_DATE",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DELETED_DATE",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "LAST_ROWID_SYSTEM",
+									"type": "String"
+								},
+								"sink": {
+									"name": "LAST_ROWID_SYSTEM",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DIRTY_IND",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DIRTY_IND",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SLS_ORG_DIV_CD",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SLS_ORG_DIV_CD",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SLS_ORG_DIV_NM",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SLS_ORG_DIV_NM",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SLS_ORG_DIV_SHRT_NM",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SLS_ORG_DIV_SHRT_NM",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "SLS_ORG_CO_CD",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SLS_ORG_CO_CD",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "DESCN",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DESCN",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "STAT_CD",
+									"type": "String"
+								},
+								"sink": {
+									"name": "STAT_CD",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "EFFTV_DT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EFFTV_DT",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "END_DT",
+									"type": "String"
+								},
+								"sink": {
+									"name": "END_DT",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "SLS_ALGN_MDL_CD",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SLS_ALGN_MDL_CD",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "C_LKUP_SLS_ORG_DIV_MV_storage",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "C_LKUP_SLS_ORG_DIV_MV_table",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"annotations": []
