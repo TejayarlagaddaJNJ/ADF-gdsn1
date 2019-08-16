@@ -455,6 +455,16 @@
 							},
 							{
 								"source": {
+									"name": "prodcatgzncd",
+									"type": "String"
+								},
+								"sink": {
+									"name": "prodcatgzncd",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
 									"name": "dchainspclstatcd",
 									"type": "String"
 								},
