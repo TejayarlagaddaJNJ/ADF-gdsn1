@@ -1,0 +1,26 @@
+{
+	"name": "TEstxl",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "tjystorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "GDSN_POC (1).xlsx",
+				"container": "gdsnfile"
+			},
+			"columnDelimiter": "\t",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"type": "String"
+			}
+		]
+	}
+}
