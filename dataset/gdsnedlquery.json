@@ -14,7 +14,7 @@
 				"container": "gdsnfile"
 			},
 			"columnDelimiter": ",",
-			"rowDelimiter": "\n",
+			"rowDelimiter": "\r",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
