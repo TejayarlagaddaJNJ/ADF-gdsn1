@@ -14,9 +14,10 @@
 				"container": "gdsnfile"
 			},
 			"columnDelimiter": ",",
-			"escapeChar": "",
+			"rowDelimiter": "\n",
+			"escapeChar": "\\",
 			"firstRowAsHeader": true,
-			"quoteChar": "\\"
+			"quoteChar": "\""
 		},
 		"schema": [
 			{
